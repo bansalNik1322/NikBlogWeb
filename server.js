@@ -12,15 +12,14 @@ import router from "./routes/route.js"
 const app = express()
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
+app.use(bodyParser.json())
 
 // Making Request
 
 app.use("/", router)
 
 // listening on port
-app.listen(3000, ()=>{
+app.listen(3000, () => {
     console.log(`Server is running at http://localhost:3000/`);
 })
