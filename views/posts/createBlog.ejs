@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/posts/createBlog.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Create A New Blog</div>
+        <div class="content">
+            <form action="/user/posts/createBlog" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Enter the Title</span>
+                            <p class="errormsg" style="display: inline-block;"><%= errors.titleError%></p>
+                        </div>
+                        <input type="text" name="title" placeholder="Enter the Title" required>
+                    </div>
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Enter Category</span>
+                            <p class="errormsg" style="display: inline-block;"><%= errors.categoryError %></p>
+                        </div>
+                       <select name="category" class="selectinput">
+                           <option value="Technical">Technical</option>
+                           <option value="Food">Food</option>
+                           <option value="Beauty">Beauty</option>
+                           <option value="Scientific">Scientific</option>
+                           <option value="Politics">Politics</option>
+                           <option value="Interpersonal">Interpersonal</option>
+                           <option value="Health">Health</option>
+                       </select>
+                    </div>
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Write Blog</span>
+                            <p class="errormsg" style="display: inline-block;"><%= errors.descriptionError%></p>
+                        </div>
+                        <input type="textarea" name="description" style="height: 150px;"  placeholder="Write Here..." required>
+                    </div>
+
+                </div>
+                <div class="button">
+                    <input type="submit" value="Post It">
+                </div>
+                <div class="footerlink">
+                    
+                </div>
+            </form>
+            <div class="footerlink2">
+                <p><a href="/user">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

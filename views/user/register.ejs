@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <!---<title> Responsive Registration Form | CodingLab </title>--->
+  <link rel="stylesheet" href="/css/user/register.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="/user/register" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Full Name</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.nameError %></p>
+            </div>
+            <input name="name" type="text" placeholder="Enter your name" >
+          </div>
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Username</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.userNameError %></p>
+            </div>
+            <input type="text" name="userName" autocomplete="off" placeholder="Enter your username" >
+          </div>
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Email</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.emailError %></p>
+            </div>
+            <input type="email" name="email" placeholder="Enter your email" >
+          </div>
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Phone number</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.phoneError %></p>
+            </div>
+            <input type="tel" name="phoneNumber" placeholder="Enter your number"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+          </div>
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Password</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.passwordError %></p>
+            </div>
+            <input type="password" name="password" autocomplete="off" placeholder="Enter your password" >
+          </div>
+          <div class="input-box">
+            <div style="white-space:nowrap;">
+              <span class="details" style="display: inline-block;">Confirm Password</span>
+              <p class="errormsg" style="display: inline-block;"><%= errors.confirmPasswordError %></p>
+            </div>
+            <input type="password" name="confirmPassword"  placeholder="Confirm your password" >
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" value="Male" id="dot-1">
+          <input type="radio" name="gender" id="dot-2" value="Female">
+          <input type="radio" name="gender" id="dot-3"value="Prefer Not To Say">
+          <div style="white-space:nowrap;">
+            <span class="gender-title" style="display: inline-block;">Gender</span>
+            <p class="errormsg" style="display: inline-block;"><%= errors.genderError %></p>
+          </div>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <div class="footerlink">
+          <p>Already have An account?<a href="/user/login">Log In</a></p>
+        </div>
+      </form>
+      <div class="footerlink2">
+        <p><a href="/user">Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <script>
+    let form = document.querySelector("form")
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault()
+
+      let email = form.email.value
+      let password = form.password.value
+      let name = form.name.value
+      let confirmPassword = form.confirmPassword.value
+      let userName = form.userName.value
+      let phoneNumber = form.phoneNumber.value
+      console.log(name, phoneNumber, email, confirmPassword, password, userName);
+      const result = fetch("/register", {
+        method: "POST",
+        body : JSON.stringify({email, password, confirmPassword, phoneNumber, userName, name}),
+        headers : {'Content-Type': 'application/json'}
+      })
+    })
+  </script> -->
+</body>
+
+</html>

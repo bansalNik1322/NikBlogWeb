@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs'); -%>
+
+
+    <main>
+
+        <!------------------------ Site Title ---------------------->
+
+
+        <!------------x----------- Site Title ----------x----------->
+
+        <!-- --------------------- Blog Carousel ----------------- -->
+
+        <!-- ----------x---------- Blog Carousel --------x-------- -->
+
+        <!-- ---------------------- Site Content -------------------------->
+
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <% for(var i = 0; i < blogs.length; i++) { %>
+
+
+
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="/assets/Blog-post/blog1.png" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blogs[i].author %></span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blogs[i].writtenDate.toLocaleString('default', { day: "numeric", month: "long", year:"numeric" }) %></span>
+                                    <span><%= blogs[i].comments.length %>&nbsp;Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#"><%= blogs[i].title %></a>
+                                <p><%= blogs[i].description.substring(1, 400)%>....</p>
+                                <a href="/user/posts/userblog/get-full-blog/<%= blogs[i]._id %>">
+                                    <button class="btn post-btn">Read More &nbsp; <i
+                                            class="fas fa-arrow-right"></i></button>
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                        <% } %>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- -----------x---------- Site Content -------------x------------>
+
+    </main>
+    <%- include('../partials/footer.ejs'); -%>

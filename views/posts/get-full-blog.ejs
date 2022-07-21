@@ -1,0 +1,83 @@
+<%- include('../partials/header2.ejs'); -%>
+
+
+    <main>
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div style="margin-bottom: 100px;" class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="/assets/Blog-post/blog1.png" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blog.author %></span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%=
+                                        blog.writtenDate.toLocaleString('default', { day: "numeric" , month: "long" ,
+                                        year:"numeric" }) %></span>
+                                <span>
+                                    <%= blog.comments.length %>&nbsp;Commets
+                                </span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <h3>
+                                <%= blog.title %>
+                            </h3>
+                            <p>
+                                <%= blog.description %>
+                            </p>
+                            <form style="display: inline;">
+                                <button class="btn post-btn" onclick="postLike()">Love this Post &nbsp; 
+                                    <i style="color: red;" class='fas fa-heart' onclick="toggleLike(this)"></i>
+                                </button>
+                            </form> 
+                            <br><br>
+                        </div>
+                        <div class="commentSection">
+                            <form action="/user/posts/<%= routePath %>/get-full-blog/<%= blog._id%>/comment" method="post" class="postCommentForm">
+                                <label for="">Write your views &nbsp;<i class="fas fa-comment"></i></label>
+                                <textarea name="comment" placeholder="Write Here" rows="5" required></textarea>
+                                <button class="btn2 post-btn2" type="submit">Post</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <aside class="sidebar">
+                    <div class="all-comments" style="border-bottom: 1px solid black; overflow-y:scroll; height: auto;">
+                        <h2>Recent Comments</h2>
+                        <% for(var i=0; i < blog.comments.length; i++) { %>
+                            <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                                <div class="post-image" style="border-top: 1px solid black;">
+                                    <div class="comment-info flex-row">
+                                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
+                                            <%= blog.comments[i].date.toLocaleString('default', { day: "numeric" ,
+                                                month: "long" , year:"numeric" })%>
+                                        </span>
+                                        <span>
+                                            <%= blog.comment[i].userName%>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="comment-desc">
+                                    <p>
+                                        <%= blog.comment[i].comment%>
+                                    </p>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                    <a href="/user/post/<%= routePath %>/get-full-blog/<%= blog._id %>/comments">
+                        <button class="btn2 post-btn2">See All Comments</button>
+                    </a>
+                </aside>
+            </div>
+        </section>
+
+        <!-- -----------x---------- Site Content -------------x------------>
+
+    </main>
+
+    <%- include('../partials/footer.ejs'); -%>

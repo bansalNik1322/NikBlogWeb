@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/user/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Verify Email</div>
+        <div class="content">
+            <form action="/user/verifyemail" method="post">
+                <div class="user-details">
+              
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Password</span>
+                            <p class="errormsg" style="display: inline-block;"><%= errors.otpError%></p>
+                        </div>
+                        <input type="text" name="otp" placeholder="Enter the OTP send to your Email." required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Verify OTP">
+                </div>
+            </form>
+            <div class="footerlink2" style="width: 23%;">
+                <p><a href="/">Resent OTP</a></p>
+            </div>
+            <div class="footerlink2" style="width: 23%;">
+                <p><a href="/user">Back To Home</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

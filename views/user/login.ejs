@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/user/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Login</div>
+        <div class="content">
+            <form action="/user/login" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Email</span>
+                            <p class="errormsg" style="display: inline-block;"></p>
+                        </div>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <div style="white-space:nowrap;">
+                            <span class="details" style="display: inline-block;">Password</span>
+                            <p class="errormsg" style="display: inline-block;"></p>
+                        </div>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+                <div class="footerlink">
+                    <p>Don't have An account? Create a New One.&nbsp;<a href="/user/register">Sign Up</a></p>
+                </div>
+            </form>
+            <div class="footerlink2" style="width: 23%;">
+                <p><a href="/user/forgotpassword">Forgot Password</a></p>
+            </div>
+            <div class="footerlink2">
+                <p><a href="/user">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
