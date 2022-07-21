@@ -1,0 +1,15 @@
+Shortcut name -- 
+fn -- File Name
+
+Project Name -- NikBlog
+
+Function -- Admin Panel, User Blog Writing and Reading - 
+
+1.Home page / fn - views/index/index.ejs (header, footer)  api -- /user
+2.Login page / fn - views/user/Login.ejs api -- /user/login         post Api -- /user/login
+2.Login page / fn - views/user/register.ejs api -- /user/register         post Api -- /user/register
+2.Login page / fn - views/user/forgotpassword.ejs api -- /user/register         post Api -- /user/register
+
+
+
+From home page user can access Categories page without Auth and for other pages user has to be authorized 

@@ -1,34 +1,48 @@
-mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-var userSchema = new mongoose.Schema({
+
+let userSchema = new mongoose.Schema({
     name: {
-        typeof: String,
-        require: true
-    },
-    email: {
-        typeof: String,
-        require: true
-    },
-    password: {
-        typeof: String,
-        require: true
-    },
-    phoneNumber: {
-        typeof: String,
-        require: true
+        type: String,
+        required: true,
+        trim: true
     },
     userName: {
-        typeof: String,
-        require: true
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
     },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+    },
+    gender: {
+        type: String,
+        trim: true,
+    },
+    password: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    phoneNumber: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    token: {
+        type: String,
+    },
+    verify: {
+        type: Boolean,
+        default: false
+    },
+    blogs: [String]
+}, { timestamps: true })
 
-    img: {
-        data: Buffer,
-        contentType: String
-    }
-});
-
-//Image is a model which has a schema imageSchema
-
-const User = new mongoose.model('User', userSchema);
-export default User
+let userModel = mongoose.model("User", userSchema)
+export default userModel

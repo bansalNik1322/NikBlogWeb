@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: #E5E7E8;
+    position: relative;
+    display: flex;
+
+}
+
+#menu {
+    background-color: #111827;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#menu .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 30px 0 0 30px;
+}
+
+#menu .items {
+    margin-top: 40px;
+}
+
+#menu .logo img {
+    width: 40px;
+    margin-right: 15px;
+}
+
+#menu .items li {
+    list-style: none;
+    padding: 15px 0;
+    transition: 0.3 ease;
+}
+
+#menu .items li i {
+    color: rgb(134, 141, 151);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font: 14px;
+    margin: 0 10px 0 25px;
+}
+
+#menu .items li a {
+    text-decoration: none;
+    color: rgb(134, 141, 151);
+    font-weight: 300px;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+
+
+#menu .items li:hover {
+    background-color: #253047;
+   
+}
+
+#menu .items li:nth-child(1) {
+    border-left: 4px solid #fff;
+}
+
+#menu .items li:hover i,
+#menu .items li:hover a {
+    color: #F3F4F6;
+}
+
+#interface {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    position: relative;
+}
+
+#interface .navigation {
+    display: flex;
+    width: calc(100% - 300px);
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px 30px;
+    border-bottom: 3px solid #594ef7;
+    position: fixed;
+}
+
+#interface .navigation .search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid #d7dbe6;
+}
+
+#interface .navigation .search input {
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+
+#interface .navigation .search i {
+    margin-right: 14px;
+}
+
+
+#interface .navigation .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#interface .navigation .profile i {
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#interface .navigation .profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.i-name {
+    color: #444a53;
+    padding: 30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 80px;
+}
+
+.n1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#menubtn {
+    display: none;
+    color: #2b2b2b;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+.board {
+    width: 94%;
+    margin: 30px 0 30px 30px;
+    overflow: auto;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.board img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.board h5 {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.board p {
+    font-weight: 600;
+    font-size: 14px;
+    color: #787d8d;
+}
+
+.board .people {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+tr {
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead td {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: start;
+    padding: 15px;
+    background-color: #F9FAFB;
+}
+
+
+tbody tr td {
+    padding: 10px 15px;
+}
+
+.active p {
+    background-color: #d7fada;
+    padding: 2px 10px;
+    border-radius: 14px;
+    min-width: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+    .edit a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #554cd1;
+        font-weight: 600;
+    }
+.role p{
+    background-color: #d7fada;
+    padding: 2px 10px;
+    border-radius: 14px;
+    min-width: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+@media (max-width : 769px) {
+    #menu {
+        width: 270px;
+        position: fixed;
+        left: -270px;
+        transition: 0.3s ease;
+    }
+    
+    #menu.active{
+        left: 0px;
+    }
+    #menubtn {
+        display: initial;
+    }
+
+    #menu.active ~ #interface{
+        width: calc(100% - 270px);
+        transition: 0.3s ease;
+        margin-left: 270px;
+    }
+    #interface {
+        width: 100%;
+        margin-left: 0px;
+        display: inline-block;
+    }
+
+
+    #interface .navigation {
+        width: 100%;
+    }
+
+  
+    .board {
+        width: 92%;
+        padding: 0;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+}
